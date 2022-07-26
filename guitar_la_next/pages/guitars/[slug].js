@@ -1,8 +1,30 @@
 import Layout from "../../components/Layout";
 import Image from "next/image";
 import styles from "../../styles/Guitar.module.css";
-const ShowGuitar = ({ guitar }) => {
+import { useState } from "react";
+
+const ShowGuitar = ({ guitar, addProduct }) => {
+  const [quantity, setQuantity] = useState(1);
+
   const { name, description, slug, image, price } = guitar;
+  const handlerAddProduct = (e) => {
+    e.preventDefault();
+    if (isNaN(quantity)) {
+      alert("Cantidad no válida");
+      return;
+    }
+
+    const selectedGuitar = {
+      id: guitar.id,
+      image: guitar.image.url,
+      name: guitar.name,
+      price: guitar.price,
+      quantity,
+    };
+
+    addProduct(selectedGuitar);
+  };
+
   return (
     <Layout titlePage={`Guitarra ${name}`}>
       <div className={styles.guitar}>
@@ -18,9 +40,12 @@ const ShowGuitar = ({ guitar }) => {
           <p className={styles.description}>{description}</p>
           <p className={styles.price}>${price}</p>
 
-          <form className={styles.guitar_form}>
+          <form className={styles.guitar_form} onSubmit={handlerAddProduct}>
             <label>Cantidad:</label>
-            <select>
+            <select
+              value={quantity}
+              onChange={(e) => setQuantity(parseInt(e.target.value))}
+            >
               <option value="">--Seleccione--</option>
               <option value="1">1</option>
               <option value="2">2</option>
