@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .content {
+        grid-column: 2/3;
+    }
+}
+.text {
+    color: var(--white);
+    text-align: center;
+    font-size: 2.4rem;
+}
+.link {
+    color: var(--white);
+    margin-top: 0;
+}

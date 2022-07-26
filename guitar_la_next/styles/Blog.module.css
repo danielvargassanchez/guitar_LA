@@ -1,0 +1,28 @@
+.content {
+    padding: 2rem;
+}
+
+.item {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+.blogtext {
+    white-space: pre-wrap;
+}
+.content h3 {
+    font-weight: 400;
+    font-size: 2.8rem;
+    margin: 0;
+    line-height: 1.2;
+}
+.resume {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+.date {
+    font-size: 1.6rem;
+    color: var(--primary);
+}

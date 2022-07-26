@@ -1,0 +1,59 @@
+.guitar {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 1rem;
+    align-items: center;
+    max-width: 95rem;
+    margin: 0 auto;
+}
+.content {
+    padding: 1rem;
+}
+.content h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.price {
+    color: var(--primary);
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 0;
+}
+.text_link {
+    font-size: 1rem;
+}
+.guitar_form {
+    display: flex;
+    flex-direction: column;
+}
+.guitar_form label {
+    font-size: 2.2rem;
+}
+.guitar_form select {
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+.guitar_form input[type="submit"] {
+    margin-top: 3rem;
+    display: block;
+    background-color: var(--primary);
+    text-transform: uppercase;
+    padding: 2rem;
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+.guitar_form input[type="submit"]:hover {
+    background-color: var(--black);
+    cursor: pointer;
+}
